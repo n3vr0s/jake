@@ -1,0 +1,114 @@
+ext {
+    androidPlugin = 'com.android.tools.build:gradle:2.3.0-beta2'
+    minSdkVersion = 16
+    targetSdkVersion = 25
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+
+    versionCode = 1
+    versionName = "1.0.0"
+
+    kotlinVersion = '1.0.6'
+    kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    kotlinAndroidSdkAnnotations = "org.jetbrains.kotlin:kotlin-android-sdk-annotations:1.0.0"
+    kotlinAndroidExtensions = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+
+    supportVersion = '25.1.0'
+    supportAnnotations = "com.android.support:support-annotations:$supportVersion"
+    supportV4 = "com.android.support:support-v4:$supportVersion"
+    supportRecyclerView = "com.android.support:recyclerview-v7:$supportVersion"
+    supportAppCompat = "com.android.support:appcompat-v7:$supportVersion"
+    cardView = "com.android.support:cardview-v7:$supportVersion"
+    supportDesign = "com.android.support:design:$supportVersion"
+    supportPercent = "com.android.support:percent:$supportVersion"
+    supportPalette = "com.android.support:palette-v7:$supportVersion"
+
+    constraintLayoutVersion = '1.0.0-beta4'
+    constarintLayout = "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+
+    butterknifeVersion = '8.4.0'
+    butterknife = "com.jakewharton:butterknife:$butterknifeVersion"
+    butterknifeCompiler = "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+
+    greenrobotEventBusVersion = '3.0.0'
+    greenrobotEventBus = "org.greenrobot:eventbus:$greenrobotEventBusVersion"
+
+    okHttp3DownloaderVersion = '1.0.2'
+    okHttp3Downloader = "com.jakewharton.picasso:picasso2-okhttp3-downloader:$okHttp3DownloaderVersion"
+
+    okLogVersion =  '2.0.0'
+    okLog = "com.github.simonpercic:oklog3:$okLogVersion"
+
+    expandableLayoutVersion = '1.2.0'
+    expandableLayout= "com.github.SilenceDut:ExpandableLayout:$expandableLayoutVersion"
+
+    multiselectVersion = '0.2'
+    multiselect = "com.bignerdranch.android:recyclerview-multiselect:$multiselectVersion"
+
+//    playServicesVersion = '8.4.0'
+//    playServicesLocation = "com.google.android.gms:play-services-location:$playServicesVersion"
+//    playServicesWearables = "com.google.android.gms:play-services-wearable:$playServicesVersion"
+//
+//    supportWearable = 'com.google.android.support:wearable:1.3.0'
+
+    daggerVersion = "2.7"
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    javaxAnnotation = 'org.glassfish:javax.annotation:10.0-b28'
+
+    retrofitVersion = "2.1.0"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    converterMoshi = "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    converterGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    adapterRxjava = "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+    retrofitMock = "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
+
+    //TODO new version
+    adapterRxJavaMock = "com.squareup.retrofit:adapter-rxjava-mock:2.0.0-beta2"
+
+    timber = "com.jakewharton.timber:timber:4.1.0"
+    kotterknife = "com.jakewharton:kotterknife:0.1.0-SNAPSHOT"
+
+
+    leakCanaryVersion = "1.4-beta2"
+    leakcanary = "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+    leakcanaryNoOp = "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
+
+    gson = "com.google.code.gson:gson:2.6.2"
+
+    reactiveLocation = "pl.charmas.android:android-reactive-location:0.8@aar"
+    rxJava = "io.reactivex:rxjava:1.1.6"
+    rxAndroid = "io.reactivex:rxandroid:1.2.0"
+
+    autofactoryVersion = "1.0-beta3"
+    autofactory = "com.google.auto.factory:auto-factory:$autofactoryVersion"
+
+    rxJavaDebug = "io.reactivex:rxjava-debug:1.0.3"
+    rxpermissions = "com.tbruyelle.rxpermissions:rxpermissions:0.5.1@aar"
+    rxKotlin = "io.reactivex:rxkotlin:0.55.0"
+
+    rxbindingVersion = "0.4.0"
+    rxbinding = "com.jakewharton.rxbinding:rxbinding:$rxbindingVersion"
+    rxbindingDesign = "com.jakewharton.rxbinding:rxbinding-design:$rxbindingVersion"
+
+    stetho = "com.facebook.stetho:stetho:1.3.1"
+    stethoOkhttp = "com.facebook.stetho:stetho-okhttp:1.2.0"
+    threetenabp = 'com.jakewharton.threetenabp:threetenabp:1.0.3'
+
+    crashlyticsVersion = "2.6.3"
+    crashlytics = "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion@aar"
+
+    picasso = "com.squareup.picasso:picasso:2.5.2"
+
+    supportTestRunner = "com.android.support.test:runner:0.4.1"
+    supportTestRules = "com.android.support.test:rules:0.4.1"
+    supportTestEspresso = "com.android.support.test.espresso:espresso-core:2.2.1"
+    supportTestEspressoContrib = "com.android.support.test.espresso:espresso-contrib:2.2.1"
+
+    junit = "junit:junit:4.12"
+    truth = "com.google.truth:truth:0.27"
+    mockito = 'org.mockito:mockito-core:1.9.5'
+    dexmaker = 'com.google.dexmaker:dexmaker:1.0'
+    dexmakerMockito = 'com.google.dexmaker:dexmaker-mockito:1.0'
+}

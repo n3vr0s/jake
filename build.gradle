@@ -1,0 +1,38 @@
+apply from: rootProject.file('dependencies.gradle')
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+        maven {
+            url "http://dl.bintray.com/tbruyelle/tbruyelle"
+        }
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+
+    buildscript {
+
+        repositories {
+            jcenter()
+            maven { url 'https://maven.fabric.io/public' }
+        }
+
+        dependencies {
+            classpath rootProject.ext.androidPlugin
+            classpath rootProject.ext.kotlinPlugin
+            classpath 'io.fabric.tools:gradle:1.+'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

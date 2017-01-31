@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pl.amstard.eon.screens.repolist.RepoListLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repoListLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.repolist.RepoListActivity">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRepos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</pl.amstard.eon.screens.repolist.RepoListLayout>

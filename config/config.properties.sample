@@ -1,0 +1,7 @@
+signing.release.keyPath=/home/tokenizer/sample/tokenizer/key
+signing.release.storePassword=storePasswordGoesHere
+signing.release.keyAlias=keyAliasGoesHere
+signing.release.keyPassword=keyPasswordGoesHere
+
+gcm.debug=gcmProjectIdGoesHere
+gcm.release=gcmProjectIdGoesHere

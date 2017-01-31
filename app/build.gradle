@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+int minSdk = hasProperty('minSdk') ? minSdk.toInteger() : rootProject.ext.minSdkVersion
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "me.adrianopyrchal"
+
+        minSdkVersion minSdk
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+
+        debug {
+            applicationIdSuffix '.debug'
+            minifyEnabled false
+            debuggable true
+            defaultConfig {
+                minSdkVersion 21
+            }
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+            debug.java.srcDirs += 'src/debug/kotlin'
+            release.java.srcDirs += 'src/release/kotlin'
+        }
+        exclude "META-INF/LICENSE.txt"
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        debug.java.srcDirs += 'src/debug/kotlin'
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+}
+
+configurations.all {
+    resolutionStrategy {
+//        force 'com.android.support:support-annotations:25.0.1'
+    }
+}
+
+dependencies {
+    compile project(":auberginekotlin")
+
+    compile(rootProject.ext.crashlytics){
+        transitive = true;
+    }
+
+    compile rootProject.ext.kotlinStdlib
+    compile rootProject.ext.kotlinAndroidSdkAnnotations
+
+    compile rootProject.ext.supportAppCompat
+    compile rootProject.ext.supportAnnotations
+    compile rootProject.ext.supportRecyclerView
+    compile rootProject.ext.supportDesign
+    compile rootProject.ext.supportV4
+
+    compile rootProject.ext.retrofit
+    compile rootProject.ext.adapterRxjava
+
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    compile rootProject.ext.timber
+
+    compile rootProject.ext.gson
+    compile rootProject.ext.converterGson
+
+    compile 'com.jakewharton.rxbinding:rxbinding-kotlin:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:0.4.0'
+
+    compile rootProject.ext.dagger
+    kapt rootProject.ext.daggerCompiler
+    provided rootProject.ext.javaxAnnotation
+
+    compile rootProject.ext.kotterknife
+    compile rootProject.ext.rxJava
+    compile rootProject.ext.rxKotlin
+
+    compile rootProject.ext.greenrobotEventBus
+
+    compile rootProject.ext.rxAndroid
+    compile rootProject.ext.rxpermissions
+    compile rootProject.ext.stetho
+    compile rootProject.ext.stethoOkhttp
+
+    compile rootProject.ext.rxbinding
+    compile rootProject.ext.rxbindingDesign
+
+    compile rootProject.ext.picasso
+    compile rootProject.ext.okHttp3Downloader
+
+    debugCompile rootProject.ext.rxJavaDebug
+    debugCompile rootProject.ext.leakcanary
+    debugCompile 'com.squareup.haha:haha:2.0.3'
+    debugCompile rootProject.ext.okLog
+    debugCompile rootProject.ext.retrofitMock
+    debugCompile rootProject.ext.adapterRxJavaMock
+
+    releaseCompile rootProject.ext.leakcanaryNoOp
+
+    testCompile rootProject.ext.junit
+//    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile rootProject.ext.junit
+    androidTestCompile rootProject.ext.truth
+    androidTestCompile rootProject.ext.mockito
+    androidTestCompile rootProject.ext.dexmaker
+    androidTestCompile rootProject.ext.dexmakerMockito
+    androidTestCompile( rootProject.ext.supportTestRunner ){
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+
+    androidTestCompile( rootProject.ext.supportTestRules ){
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+}
+
+kapt {
+    generateStubs = true
+}

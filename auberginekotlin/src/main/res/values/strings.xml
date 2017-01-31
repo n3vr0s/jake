@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AubergineKotlin</string>
+    <string name="tv_channel_header">Channels</string>
+</resources>
